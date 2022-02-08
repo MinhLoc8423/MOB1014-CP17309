@@ -2,9 +2,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Asm{
+		public static ArrayList<Employee> arrNV = new ArrayList<Employee>();
+
 		public static ArrayList<Employee> nhapList(){
 				System.out.println("-----------------");
-				ArrayList<Employee> arrNV = new ArrayList<Employee>();
 				while(true){
 						Employee nv = new Employee();
 						Scanner sc = new Scanner(System.in);
@@ -37,6 +38,27 @@ public class Asm{
 				}
 				System.out.println("-----------------");
 		}
+		public static void xoaList(ArrayList<Employee> arrNV){
+				Scanner sc = new Scanner(System.in);
+				System.out.println("-----------------");
+				System.out.print("Nhập mã nhân viên cần xóa: ");
+				String xoaTen = sc.nextLine();
+				Employee found = null;
+				for(Employee index : arrNV){
+						if(index.getMaNV().equalsIgnoreCase(xoaTen)){
+							found = index;
+						}
+				}
+				if(found != null){
+						arrNV.remove(found);
+						System.out.println("Nhân viên đã được xóa");
+				}
+				else{
+					System.out.println("Không tìm thấy tên nhân viên");
+				}
+		}
+		public static void capNhatList(ArrayList<Employee> arrNV){
+		}
 		public static void  timList(ArrayList<Employee> arrNV){
 				Scanner sc = new Scanner(System.in);
 				System.out.println("-----------------");
@@ -58,7 +80,6 @@ public class Asm{
 				System.out.println("-----------------");
 		}
 		public static void main(String[] args){
-				ArrayList<Employee> arrNV = new ArrayList<Employee>();
 				Scanner sc = new Scanner(System.in);
 				while(true){
 						System.out.println("***Ứng dụng quản lý nhân viên***");
@@ -84,7 +105,7 @@ public class Asm{
 										timList(arrNV);
 										break;
 								case 4:
-										System.out.println("Xóa nhân viên theo mã nhập từ bàn phím");
+										xoaList(arrNV);
 										break;
 								case 5:
 										System.out.println("Cập nhật thông tin nhân viên theo mã");

@@ -1,6 +1,6 @@
 public class Employee{
 		private String maNV,hoTen;
-		double luong;
+		private double luong;
 		
 		public Employee(){
 		}
