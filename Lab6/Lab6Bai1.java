@@ -7,7 +7,7 @@ public class Lab6Bai1{
 		String hoTen = sc.nextLine();
 		String ho = hoTen.substring(0,hoTen.indexOf(" ")).toUpperCase();
 		String ten = hoTen.substring(hoTen.lastIndexOf(" ")+1).toUpperCase();
-		String tenDem = hoTen.substring(hoTen.indexOf(" ")+1,hoTen.lastIndexOf(" ")-1).toUpperCase();
+		String tenDem = hoTen.substring(hoTen.indexOf(" "),hoTen.lastIndexOf(" ")).toUpperCase();
 		System.out.println("Họ: "+ho);
 		System.out.println("Tên đệm: "+tenDem);
 		System.out.println("Tên: "+ten);
